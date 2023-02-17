@@ -1,0 +1,105 @@
+.hero {
+  padding-top: 110px;
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.hero__logo {
+  width: 190px;
+  height: 60px;
+  margin-bottom: 90px;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.hero__title {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 75px;
+  text-transform: uppercase;
+  color: rgba($color: #162c4e, $alpha: 0.39);
+  margin-bottom: 8px;
+}
+
+.hero__subtitle {
+  width: 430px;
+  font-weight: 400;
+  line-height: 27px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.hero__timer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.hero__any-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & span {
+    margin-bottom: 12px;
+  }
+}
+
+.hero__btn {
+  width: fit-content;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
+}
+
+.footer {
+  width: 100%;
+  height: 192px;
+  background: #162c4e;
+  display: flex;
+  align-items: center;
+
+  & .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__input {
+    width: 440px;
+  }
+
+  &__submit {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__other-btn {
+    position: absolute;
+    right: 0;
+    color: #fff;
+  }
+}

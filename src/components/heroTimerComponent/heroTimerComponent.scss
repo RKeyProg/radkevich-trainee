@@ -1,0 +1,38 @@
+.timer__point-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+
+  & span {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 72px;
+    color: #162c4e;
+    position: relative;
+
+    &::after {
+      content: ":";
+      position: absolute;
+      margin: 0 30px;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    & span::after {
+      display: none;
+    }
+  }
+}
+
+.timer__point-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timet__point-title {
+  color: #fff;
+}

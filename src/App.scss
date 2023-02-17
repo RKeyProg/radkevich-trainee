@@ -1,0 +1,111 @@
+html {
+  font-size: 18px;
+}
+
+::selection {
+  background: #bdbdbd;
+}
+
+button,
+input {
+  border: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#app {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.app-container {
+  position: relative;
+  color: #000;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 470px;
+    height: 419px;
+    background: center/cover no-repeat
+      url("./assets/bg/heroLeftCornerDecor.png");
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 271px;
+    height: 327px;
+    background: center/cover no-repeat
+      url("./assets/bg/heroRightCornerDecor.png");
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1705px;
+  margin: 0 auto;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

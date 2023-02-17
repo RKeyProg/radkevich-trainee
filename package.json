@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "normalize.css": "^8.0.1",
+    "vue": "^3.2.13",
+    "vue-loader": "^17.0.1",
+    "vue-timer-hook": "^1.0.60"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -21,6 +24,11 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "sass": "^1.58.2",
+    "sass-loader": "^13.2.0",
+    "svgo": "^3.0.2",
+    "svgo-loader": "^4.0.0",
+    "vue-cli-plugin-svg-sprite": "^1.1.0"
   }
 }
