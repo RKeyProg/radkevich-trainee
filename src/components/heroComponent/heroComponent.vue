@@ -4,7 +4,7 @@
       <base-icon name="logo" class="hero__logo"></base-icon>
       <div class="hero__content">
         <div class="hero__info">
-          <h1 class="hero__title">Under Construction</h1>
+          <h1 class="hero__title section__title">Under Construction</h1>
           <p class="hero__subtitle">
             We're making lots of improvements and will be back soon
           </p>
@@ -14,9 +14,11 @@
         </div>
         <div class="hero__any-info">
           <span>Check our event page when you wait:</span>
-          <base-button arrow="right" class="hero__btn"
-            >Go to the event</base-button
-          >
+          <a href="https://www.google.com/" target="_blank">
+            <base-button arrow="right" class="hero__btn"
+              >Go to the event</base-button
+            >
+          </a>
         </div>
       </div>
     </div>
@@ -31,12 +33,16 @@
             <base-icon name="arrow" class="footer__arrow"></base-icon>
           </base-button>
         </form>
-        <base-button
-          class="footer__other-btn"
-          currentType="transparent"
-          arrow="down"
-          >Other Events</base-button
-        >
+        <a href="#all-events" v-smooth-scroll>
+          <base-button
+            class="footer__other-btn"
+            currentType="transparent"
+            arrow="down"
+            @handleClick="scroll"
+          >
+            Other Events
+          </base-button>
+        </a>
       </div>
     </footer>
   </div>
@@ -55,6 +61,9 @@ export default {
     BaseButton,
     BaseInput,
     timer,
+  },
+  methods: {
+    scroll() {},
   },
 };
 </script>

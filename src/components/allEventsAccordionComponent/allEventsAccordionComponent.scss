@@ -1,0 +1,194 @@
+@import "../../mixins.scss";
+
+.accordion-component {
+  font-family: "SF Pro Display", sans-serif;
+  width: 100%;
+  max-height: 682px;
+  height: 63vh;
+
+  @include tablets {
+    max-height: 100%;
+    height: 80vh;
+  }
+}
+
+.accordion__menu {
+  height: 100%;
+  display: flex;
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.accordion__item {
+  display: flex;
+  width: 4.72rem;
+  height: 100%;
+  transition: all 1s linear;
+  margin-right: 4px;
+
+  @include tablets {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 3rem;
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+
+  &.active {
+    flex: 1;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  & > .accordion__content {
+    border-bottom: 2px solid #ff1e00;
+
+    @include tablets {
+      border: 0;
+    }
+  }
+}
+
+.accordion__btn {
+  width: 4.72rem;
+  padding: 1.1rem;
+  background: #162c4e;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  color: #fff;
+  flex-shrink: 0;
+
+  @include tablets {
+    font-size: 1.2rem;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+  }
+
+  & p {
+    margin-bottom: 2.2rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: left;
+
+    @include tablets {
+      writing-mode: lr-tb;
+      transform: rotate(0);
+      margin-bottom: 0;
+      margin-left: 2.2rem;
+    }
+  }
+
+  & span {
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    letter-spacing: -0.03em;
+
+    @include tablets {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.accordion__content {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  margin-left: 1px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
+
+  @include tablets {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    background-position: center top;
+  }
+}
+
+.accordion__item-side {
+  position: relative;
+  width: 20rem;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(20px);
+  padding: 2.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+
+  @include tablets {
+    width: 100%;
+    height: 12rem;
+    padding: 2.5rem;
+  }
+
+  &::before {
+    content: attr(data-id);
+    position: absolute;
+    left: -7.9rem;
+    top: -2.1rem;
+    font-weight: 600;
+    font-size: 21rem;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.04);
+
+    @include tablets {
+      font-size: 9.5rem;
+      left: auto;
+      right: -1.7rem;
+      top: 0;
+    }
+  }
+}
+
+.side__title {
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 0.66rem;
+
+  @include tablets {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.side__date {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.38rem;
+
+  @include tablets {
+    line-height: 1.4rem;
+  }
+}
+
+.side__btn {
+  width: 14.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.8);
+}

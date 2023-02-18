@@ -21,6 +21,7 @@
     <button
       v-else-if="currentType === 'transparent'"
       class="btn btn_fill_transparent"
+      @click="$emit('handleClick')"
     >
       <slot></slot>
       <base-icon
@@ -37,7 +38,14 @@
     <button
       v-else-if="currentType === 'submit'"
       class="btn btn_type_submit"
-      @click="$emit('handleSubmit')"
+      @click="$emit('handleClick')"
+    >
+      <slot></slot>
+    </button>
+    <button
+      v-else-if="currentType === 'square'"
+      class="btn btn_type_square"
+      @click="$emit('handleClick')"
     >
       <slot></slot>
     </button>

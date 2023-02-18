@@ -4,11 +4,11 @@
 
 .input {
   width: 100%;
-  padding: 16px 21px;
+  padding: 0.88rem 1.2rem;
   border-radius: 100px;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 1rem;
+  line-height: 2rem;
   color: rgba(0, 0, 0, 0.6);
   outline: none;
   background: #fff;
@@ -16,8 +16,8 @@
   &::placeholder {
     color: #989fb7;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 1rem;
+    line-height: 2rem;
     color: rgba(0, 0, 0, 0.6);
   }
 }
