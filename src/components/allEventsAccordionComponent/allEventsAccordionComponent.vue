@@ -21,9 +21,11 @@
           <div class="accordion__item-side" :data-id="item.id">
             <div class="side__title">{{ item.title }}</div>
             <div class="side__date">{{ item.date }}</div>
-            <base-button currentType="square" class="side__btn"
-              >More information</base-button
-            >
+            <a href="https://www.google.com/" target="_blank">
+              <base-button currentType="square" class="side__btn">
+                More information
+              </base-button>
+            </a>
           </div>
         </div>
       </li>

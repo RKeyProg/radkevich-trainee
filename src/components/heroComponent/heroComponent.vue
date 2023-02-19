@@ -1,7 +1,9 @@
 <template>
   <div class="hero section">
     <div class="container">
-      <base-icon name="logo" class="hero__logo"></base-icon>
+      <a href="#">
+        <base-icon name="logo" class="hero__logo"></base-icon>
+      </a>
       <div class="hero__content">
         <div class="hero__info">
           <h1 class="hero__title section__title">Under Construction</h1>
@@ -24,10 +26,11 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <form action="#" class="footer__form">
+        <form action="#" class="footer__form" @submit.prevent="formSubmit">
           <base-input
             title="Enter your Email and get notified"
             class="footer__input"
+            v-model="this.email"
           ></base-input>
           <base-button currentType="submit" class="footer__submit">
             <base-icon name="arrow" class="footer__arrow"></base-icon>
@@ -38,7 +41,6 @@
             class="footer__other-btn"
             currentType="transparent"
             arrow="down"
-            @handleClick="scroll"
           >
             Other Events
           </base-button>
@@ -54,6 +56,11 @@ import BaseButton from "../BaseButton";
 import BaseInput from "../BaseInput";
 import timer from "../heroTimerComponent";
 
+import $axios from "../../requests";
+import { email, required } from "@vuelidate/validators";
+import { useVuelidate } from "@vuelidate/core";
+import { mapActions } from "vuex";
+
 export default {
   name: "HeroComponent",
   components: {
@@ -62,8 +69,43 @@ export default {
     BaseInput,
     timer,
   },
+  data() {
+    return {
+      email: "",
+    };
+  },
   methods: {
-    scroll() {},
+    ...mapActions({
+      showTooltip: "tooltips/show",
+    }),
+    async formSubmit() {
+      if (this.v$.$silentErrors.length) {
+        this.showTooltip({
+          text: this.v$.$silentErrors[0].$message,
+          type: "error",
+        });
+      }
+
+      try {
+        // const response = await $axios.post("/setEmail", this.email);
+
+        this.showTooltip({
+          text: "You have successfully subscribed to the email newsletter",
+          type: "success",
+        });
+      } catch (error) {
+        this.showTooltip({
+          text: error.response.data.message,
+          type: "error",
+        });
+      }
+    },
+  },
+  setup: () => ({ v$: useVuelidate() }),
+  validations() {
+    return {
+      email: { required, email },
+    };
   },
 };
 </script>

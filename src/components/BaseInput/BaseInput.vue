@@ -5,7 +5,7 @@
       class="input"
       type="text"
       v-bind="$attrs"
-      :value="currentValue"
+      :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       :placeholder="title"
     />
@@ -19,11 +19,11 @@ export default {
       type: String,
       default: "text",
     },
-    currentValue: {
+    title: {
       type: String,
       default: "",
     },
-    title: {
+    modelValue: {
       type: String,
       default: "",
     },

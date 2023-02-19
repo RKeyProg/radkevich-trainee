@@ -2,18 +2,44 @@
   <div class="app-container">
     <hero-component></hero-component>
     <all-events id="all-events"></all-events>
+    <transition name="notification">
+      <div v-if="isTooltipShown" class="notify-container">
+        <div class="notification">
+          <notification
+            :text="tooltipText"
+            :type="tooltipType"
+            @closeNotification="hideTooltip"
+          />
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
 import heroComponent from "./components/heroComponent";
 import allEvents from "./components/allEventsComponent";
+import notification from "./components/notificationComponent";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "App",
   components: {
     heroComponent,
     allEvents,
+    notification,
+  },
+  methods: {
+    ...mapActions({
+      hideTooltip: "tooltips/hide",
+    }),
+  },
+  computed: {
+    ...mapState("tooltips", {
+      isTooltipShown: (state) => state.isShown,
+      tooltipText: (state) => state.text,
+      tooltipType: (state) => state.type,
+    }),
   },
 };
 </script>

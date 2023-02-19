@@ -33,5 +33,6 @@ module.exports = defineConfig({
       },
     },
   },
-  publicPath: process.env.NODE_ENV === "production" ? "/mrk-draw/" : "/",
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/radkevich-trainee/" : "/",
 });

@@ -78,6 +78,7 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
 }
 
 .app-container {
@@ -96,6 +97,10 @@ a {
     height: 23rem;
     background: center/cover no-repeat
       url("./assets/bg/heroLeftCornerDecor.png");
+    animation: heroLeftCornerDecor 1s ease;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
 
     @include tablets {
       top: -3rem;
@@ -119,13 +124,38 @@ a {
     height: 18rem;
     background: center/cover no-repeat
       url("./assets/bg/heroRightCornerDecor.png");
+    animation: heroRightCornerDecor 1s ease;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
 
     @include phones {
       top: -1rem;
       right: -2rem;
       width: 13rem;
-      // height: 15rem;
     }
+  }
+}
+
+@keyframes heroLeftCornerDecor {
+  0% {
+    transform: translate(-100px, -100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroRightCornerDecor {
+  0% {
+    transform: translate(100px, -100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
   }
 }
 
@@ -164,4 +194,28 @@ a {
   @include tablets {
     padding-top: 7vh;
   }
+}
+
+.notify-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(22, 44, 78, 0.6);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.notification-enter-active,
+.notification-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.notification-enter-from,
+.notification-leave-to {
+  opacity: 0;
 }

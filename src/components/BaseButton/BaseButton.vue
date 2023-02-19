@@ -2,7 +2,7 @@
   <div class="btn-component">
     <button
       v-if="currentType === 'fill'"
-      class="btn"
+      :class="['btn', { btn_justify_center: !arrow }]"
       @click="$emit('handleClick')"
       :disabled="disabled"
     >
@@ -66,7 +66,7 @@ export default {
     disabled: Boolean,
     arrow: {
       type: String,
-      default: "right",
+      default: "",
     },
   },
 };

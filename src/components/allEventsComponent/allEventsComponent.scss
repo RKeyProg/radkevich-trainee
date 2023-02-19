@@ -1,3 +1,17 @@
 .all-events__title {
   margin-bottom: 3.7vh;
 }
+
+.show-enter-active {
+  transition: all 0.5s linear;
+}
+
+.show-enter-from {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.show-enter-to {
+  transform: translateY(0);
+  opacity: 1;
+}
