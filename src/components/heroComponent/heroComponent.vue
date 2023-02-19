@@ -84,11 +84,12 @@ export default {
           text: this.v$.$silentErrors[0].$message,
           type: "error",
         });
+
+        return;
       }
 
       try {
         // const response = await $axios.post("/setEmail", this.email);
-
         this.showTooltip({
           text: "You have successfully subscribed to the email newsletter",
           type: "success",
